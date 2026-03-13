@@ -1,0 +1,31 @@
+import java.util.*;
+
+public class BalloonCost {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int T = sc.nextInt();
+
+        while (T-- > 0) {
+            int costGreen = sc.nextInt();
+            int costPurple = sc.nextInt();
+            int N = sc.nextInt();
+
+            int countP1 = 0;
+            int countP2 = 0;
+
+            for (int i = 0; i < N; i++) {
+                int p1 = sc.nextInt();
+                int p2 = sc.nextInt();
+                if (p1 == 1) countP1++;
+                if (p2 == 1) countP2++;
+            }
+
+            int cost1 = countP1 * costGreen + countP2 * costPurple;
+            int cost2 = countP1 * costPurple + countP2 * costGreen;
+
+            System.out.println(Math.min(cost1, cost2));
+        }
+
+       
+    }
+}
